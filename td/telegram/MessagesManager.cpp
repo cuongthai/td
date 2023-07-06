@@ -16207,6 +16207,7 @@ void MessagesManager::on_get_dialogs_from_database(FolderId folder_id, int32 lim
 }
 
 void MessagesManager::preload_folder_dialog_list(FolderId folder_id) {
+  return;
   if (G()->close_flag()) {
     LOG(INFO) << "Skip chat list preload in " << folder_id << " because of closing";
     return;
