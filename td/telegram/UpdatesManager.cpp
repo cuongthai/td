@@ -2889,8 +2889,9 @@ void UpdatesManager::on_update(tl_object_ptr<telegram_api::updateEncryptedChatTy
 }
 
 void UpdatesManager::on_update(tl_object_ptr<telegram_api::updateUserStatus> update, Promise<Unit> &&promise) {
-  td_->contacts_manager_->on_update_user_online(UserId(update->user_id_), std::move(update->status_));
-  promise.set_value(Unit());
+  // We don't need to use this
+  // td_->contacts_manager_->on_update_user_online(UserId(update->user_id_), std::move(update->status_));
+  // promise.set_value(Unit());
 }
 
 void UpdatesManager::on_update(tl_object_ptr<telegram_api::updateUserName> update, Promise<Unit> &&promise) {
